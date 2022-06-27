@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <link rel="StyleSheet" href="stylesheet.css" />
+    <title>Contact Information</title>
+
+    <script>
+      function contactForm() {
+        var form =
+          document.thisForm.fullname.value +
+          "\n" +
+          document.thisForm.email.value;
+        form = form + "\n\n" + document.thisForm.subject.value + "\n";
+
+        var p = "";
+        switch (document.thisForm.priority.value) {
+          case "none":
+            p = "No Priority Selected.";
+            break;
+          case "urgent":
+            p = "URGENT..!! Must be serious!";
+            break;
+          case "high":
+            p = "Very IMPORTANT.";
+            break;
+          case "medium":
+            p = "Kind of important.";
+            break;
+          case "low":
+            p = "NOT important.";
+            break;
+        }
+
+        form =
+          form + "Priority: " + p + "\n\n" + document.thisForm.message.value;
+        document.thisForm.sentMessage.value = form;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="div"><h1>Contact Information</h1></div>
+
+    Hello everyone. This is Pradip Dhungel. Below is my contact details. Please
+    reachout and let me know if you have any comments and feedback for my page.
+    You can also use the form below to reachout to us. Thank you.<br /><br />
+
+    <table border>
+      <tr>
+        <th colspan="2">Contact Information</th>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td>Pradip Dhungel</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <i><u>pdhungel@twu.edu</u> </i>
+        </td>
+      </tr>
+    </table>
+
+    <form name="thisForm">
+      <table>
+        <tr>
+          <th colspan="2">Use This Form to Contact Us</th>
+        </tr>
+
+        <tr>
+          <td>Full Name:</td>
+          <td><input type="text" size="40" name="fullname" /></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="text" size="40" name="email" /></td>
+        </tr>
+        <tr>
+          <td>subject:</td>
+          <td><input type="text" size="40" name="subject" /></td>
+        </tr>
+        <tr>
+          <td>Priority:</td>
+          <td>
+            <select name="priority" id="priority">
+              <option value="none">Choose a Priority</option>
+              <option value="urgent">URGENT..!!</option>
+              <option value="high">IMPORTANT..!!</option>
+              <option value="medium">Kind of Important</option>
+              <option value="low">Low Importance</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td valign="top">Message:</td>
+          <td><textarea name="message" rows="4" cols="40"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><input type="reset" value="Clear Form" /></td>
+          <td>
+            <input type="button" value="Send Message" onclick="contactForm()" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><br /><br /></td>
+        </tr>
+
+        <tr>
+          <th colspan="2">
+            If the message passes inspection, it will be displayed below:
+          </th>
+        </tr>
+
+        <tr>
+          <td valign="top">Message Sent:</td>
+          <td>
+            <textarea
+              name="sentMessage"
+              rows="12"
+              cols="40"
+              readonly
+            ></textarea>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

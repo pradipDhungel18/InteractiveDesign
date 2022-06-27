@@ -1,0 +1,27 @@
+a {
+  text-decoration: black;
+  display: inline-block;
+  padding: 2px;
+}
+
+a:hover {
+  background-color: lightgreen;
+  color: black;
+}
+
+.previous {
+  margin-right: 1138px;
+  background-color: white;
+  color: black;
+}
+
+.next {
+  background-color: white;
+  color: black;
+}
+
+.div {
+  background-color: brown;
+  color: whitesmoke;
+  text-align: center;
+}
